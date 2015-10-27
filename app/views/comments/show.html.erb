@@ -1,0 +1,21 @@
+<p>
+<%	if	logged_in? 	%>
+    <h2>
+        <strong>Comment</strong>
+    </h2>    
+	<div class="form-group">
+	    <table>
+	        <% @comments.each do |comment| %>
+	        <tr><td><strong>Comment: </strong><%= comment.comment  %></td></tr>
+	        <tr><td><strong>posted on: </strong><%= comment.created_at.strftime('%m/%d/%Y')  %></td></tr>
+	        <tr><td>___________________________________________________________________________</td></tr>
+	        <% end%>
+	    </table>
+        
+    </div> 
+     
+    
+<% else%>
+    <li><%=	link_to	"Login",	login_path	%></li>
+<% end%>    
+</p>

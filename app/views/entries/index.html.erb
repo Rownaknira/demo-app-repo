@@ -1,0 +1,20 @@
+
+<h1>Listing Entries</h1>
+<table>
+<thead>
+<tr>
+<th>Title</th>
+<th></th>
+</tr>
+</thead>
+<% @entries.each do |entry| %>
+<tr>
+<td><%= entry.title %></td>
+<td><%= link_to 'Show', :action => 'show', :id => entry.id  %></td>
+</tr>
+<% end %>
+</table>
+<br>
+<%	if	logged_in?	%>
+<%= link_to 'New Entry', new_entry_path %>
+<% end%> 

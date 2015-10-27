@@ -1,0 +1,25 @@
+<div	class="row">
+    <h2>Comment</h2>
+    
+		<div	class="col-md-6	col-md-offset-3">
+		        <div class="form-group">
+				        <strong>Title: </strong> <%= @entr.title%>
+				</div> 
+				<div class="form-group">
+				        <strong>Body: </strong> <%= @entr.body%>
+				</div>
+				<%=	form_for(@comment)	do	|f|	%>
+			   
+				<div class="form-group">
+						<%=	f.label	:comment	%>
+						<%=	f.text_area :comment, 	class:	'form-control'		%>
+				</div>
+				<div class="form-group">
+						<%=	f.text_area	:entry_id, :value => @entr.id,	class:	'form-control'		%>
+				</div>
+					
+						<%=	f.submit	"Post Comment",	class:	"btn	btn-primary"	%>
+				<%	end		%>
+		</div>
+		
+</div>

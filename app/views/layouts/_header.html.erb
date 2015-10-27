@@ -5,9 +5,12 @@
 						<ul	class="nav	navbar-nav	navbar-right">
 							
 								<%	if	logged_in?	%>
-								       
+								        <li><%=	link_to	"New Entry",    new_entry_path	%></li>
+								        
+								        <li><%= link_to "User List", users_path %></li>
 										<li>	<%=	link_to	"Log	out",	logout_path,	method:	"delete"	%>	</li>
 								<%	else	%>
+								        <li><%= link_to "Entry List", entries_path %></li>
 										<li><%=	link_to	"Log	in",	login_path	%></li>
 								<%	end	%>
 						</ul>

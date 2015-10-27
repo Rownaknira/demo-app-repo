@@ -1,6 +1,36 @@
 <p>
 <%	if	logged_in?	%>
-	<li><%=	link_to	"New Entry",    new_entry_path	%></li>
+    <h2>
+        <strong>User Profile</strong>
+    </h2> 
+   
+   <section>
+	<div class="form-group">
+        <strong>User Name: </strong><%= @user.name %>
+    </div> 
+    <div class="form-group">
+        <strong>Email Address: </strong><%= @user.email %>
+    </div>
+    </section>
+    
+    <div	class="col-md-8">
+                <section	class="stats">
+					<%=	render	'shared/stats'	%>
+				</section>
+				<%=	render	'follow_form'	if	logged_in?	%>
+				<%	if	@user.entries.any?	%>
+				      <%	@user2=	User.find(session[:user_id])%>
+		              <% if @user.followers.include?(@user2) == true %>
+						<h3>Entries	(<%=	@user.entries.count	%>)</h3>
+						<ol	class="microposts">
+								<%=	render	@ent	%>
+						</ol>
+					  <% end %>
+				<%	end	%>
+		</div>
+
+   
+    
 <% else%>
     <li><%=	link_to	"Login",	login_path	%></li>
 <% end%>    
