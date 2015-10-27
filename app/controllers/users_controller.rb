@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   end    
   def show
     @user	=	User.find(params[:id])
-    @ent=@user.entries.paginate(page: params[:page])
+    @entry=@user.entries.paginate(page: params[:page])
   end  
   def new
     @user	=	User.new

@@ -1,8 +1,6 @@
 <table>
-<% @ent.each do |entry| %>
-
+<% @entry.each do |entry| %>
 <tr>
-  
 <td><%=entry.title%></td>
 <td><%=entry.body%></td>
 <td><%=	link_to	"Comment",	new_comment_path("entry_id": entry.id)	%></td>
