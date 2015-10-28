@@ -1,0 +1,9 @@
+M	Gemfile
+M	Gemfile.lock
+M	app/assets/javascripts/application.js
+M	app/assets/javascripts/entries.coffee
+M	app/assets/stylesheets/application.css
+M	app/views/entries/new.html.erb
+M	config/locales/en.yml
+M	spring/882622d6f79f8a68065d8e368f1280a8.pid
+Your branch is up-to-date with 'origin/master'.
